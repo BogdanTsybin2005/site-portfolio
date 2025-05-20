@@ -1,0 +1,28 @@
+.burger-menu__body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000000;
+    background: rgba(16, 15, 15, 0.892);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .5s;
+    opacity: 0;
+    transform: translateY(-100%) scaleY(0);
+    &._burger-menu-is-active {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+.burger-menu__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
