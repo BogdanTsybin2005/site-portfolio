@@ -1,0 +1,60 @@
+.about-me__card-block {
+    border-radius: 15px;
+    background: #272727D4;
+    border: .5px solid #FFFFFF4D;
+    padding: 20px;
+    flex: 1 1 600px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.about-me__title {
+    font-size: 32px;
+    font-weight: 700;
+}
+.about-me__text {
+    line-height: 27px;
+    font-size: 16px;
+}
+.my-skills__cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    gap: 30px;
+    background: #272727D4;
+    border: .5px solid #FFFFFF4D;
+    padding: 20px;
+    border-radius: 15px;
+}
+.my-skills__card {
+    flex: 1 1 175px;
+    height: 150px;
+    background: white;
+    border: .5px solid #FFFFFF4D;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.my-skills__image-block {
+    width: 50%;
+    height: 100px;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+.my-skills__name {
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
