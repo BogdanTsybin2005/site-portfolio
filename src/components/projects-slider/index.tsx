@@ -16,15 +16,9 @@ export default function ProjectSlider() {
       slidesPerView={1}
       pagination={{ clickable: true }}
       breakpoints={{
-        640: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
       }}
       className="project-swiper"
     >

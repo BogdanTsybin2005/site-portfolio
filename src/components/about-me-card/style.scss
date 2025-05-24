@@ -15,6 +15,10 @@
 .about-me__text {
     line-height: 27px;
     font-size: 16px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-break: break-word;  
 }
 .my-skills__cards {
     display: flex;

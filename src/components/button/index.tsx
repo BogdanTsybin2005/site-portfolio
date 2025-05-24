@@ -1,7 +1,8 @@
 import type { FC, SVGProps } from 'react';
 import './style.scss';
-import CV_file from '../../../public/Tsybin_Bogdan_CV.pdf'
-import type React from 'react';
+import { useAppSelector } from '../../hoocks/useAppSelector';
+import languageData from '../../interface-language-data/data';
+import CV_file from '../../../public/Tsybin_Bogdan_CV.pdf';
 
 
 
@@ -11,7 +12,7 @@ interface IHeaderLinkButton {
 }
 
 interface IReactIconWithUrl {
-    SVGIcon: FC<SVGProps<SVGSVGElement>>;
+  SVGIcon: FC<SVGProps<SVGSVGElement>>;
     url: string;
     isIconRelatedToEmail: boolean;
 }
@@ -21,14 +22,18 @@ interface IISButtonBurgerActive {
     toggleBurgerActive: () => void;
 }
 
-
-
 export const DownloadCVButton = () => {
-    return <a href={CV_file} download className="download-cv__button">Download CV</a>;
+    const language = useAppSelector((state) => state.language);
+    const buttonText = languageData[language].home.header.downloadCVButtonText;
+
+    return (
+        <a href={CV_file} download className="download-cv__button">
+            {buttonText}
+        </a>
+    );
 };
 
-
-export const HeaderLinkToSectionButton: FC<IHeaderLinkButton> = ({buttonText, onClick}) => {
+export const HeaderLinkToSectionButton: FC<IHeaderLinkButton> = ({ buttonText, onClick }) => {
     return (
         <button className="header-link__button" onClick={onClick}>
             {buttonText}
@@ -36,22 +41,34 @@ export const HeaderLinkToSectionButton: FC<IHeaderLinkButton> = ({buttonText, on
     );
 };
 
-
 export const ButtonForFooterWithIcon: FC<IReactIconWithUrl> = ({SVGIcon, url, isIconRelatedToEmail}) => {
     return (
         <a href={url} className="footer__link" target="_blank" rel="noopener noreferrer">
-            <SVGIcon/> 
+            <SVGIcon />
             {isIconRelatedToEmail && <span>tsybinb@gmail.com</span>}
         </a>
     );
 };
 
-
 export const HeaderButtonBurger: React.FC<IISButtonBurgerActive> = ({isBurgerActive, toggleBurgerActive}) => {
-    return <button className={`header__burger ${isBurgerActive ? '_active' : ''}`} onClick={toggleBurgerActive}><span></span></button>
-}
+    return (
+        <button
+            className={`header__burger ${isBurgerActive ? '_active' : ''}`}
+            onClick={toggleBurgerActive}
+        >
+            <span></span>
+        </button>
+    );
+};
 
 
-export const HireMeButton: React.FC<{onClick: () => void}> = ({onClick}) => {
-    return <button className="hire-me__button" onClick={onClick}>Hire me</button>
-}
+export const HireMeButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+    const language = useAppSelector((state) => state.language);
+    const buttonText = languageData[language].home.hireMeButtonText;
+
+    return (
+        <button className="hire-me__button" onClick={onClick}>
+            {buttonText}
+        </button>
+    );
+};

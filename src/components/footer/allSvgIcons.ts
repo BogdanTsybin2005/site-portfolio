@@ -1,4 +1,4 @@
-import React, { type SVGProps } from 'react'
+import { type SVGProps } from 'react'
 
 import Email from '../../assets/icons/EmailIcon'
 import Telegram from '../../assets/icons/TelegramIcon'
