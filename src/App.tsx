@@ -12,6 +12,8 @@ import AboutMeCard, { MySkillsCard } from './components/about-me-card';
 import ProjectSlider from './components/projects-slider';
 import languageData from './interface-language-data/data';
 import myPhoto from '../src/assets/images/Bogdan.jpg';
+import { useEffect } from 'react';
+import useWindowWidth from './hoocks/useWindowWidth';
 
 
 
@@ -20,17 +22,24 @@ function App() {
   const homeRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const projectsMeRef = useRef<HTMLDivElement | null>(null);
-
   const dispatch = useAppDispatch();
   const isBurgerMenuOpened = useAppSelector((state) => state.burger.isOpen);
   const currentLanguage = useAppSelector((state) => state.language);
   const lang = languageData[currentLanguage];
+  const width = useWindowWidth();
 
   const handleScrollInTowView = (domElement: RefObject<HTMLElement | null>) => {
     domElement.current?.scrollIntoView({ behavior: 'smooth' });
     dispatch(closeBurger());
     document.body.style.overflow = 'auto';
   };
+
+  useEffect(() => {
+    if (width >= 768 && isBurgerMenuOpened) {
+      dispatch(closeBurger());
+      document.body.style.overflow = 'auto';
+    }
+  }, [width, isBurgerMenuOpened, dispatch]);
 
   return (
     <div className="wrapper">
@@ -85,7 +94,6 @@ function App() {
         </div>
 
         <div className="slider__projects-body" ref={projectsMeRef}>
-          <h2 className="slider__projects-title">{lang.projects.myProjects}</h2>
           <ProjectSlider />
         </div>
       </main>

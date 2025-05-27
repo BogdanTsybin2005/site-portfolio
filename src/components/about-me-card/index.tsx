@@ -22,16 +22,17 @@ const AboutMeCard: FC<AboutMeCardProps> = ({ id, title, paragraphText }) => {
 export const MySkillsCard: FC = () => {
     return (
         <div className="my-skills__cards">
-            {allMyFrontEndSkills.allMySkills.map(({ id, skillName, technologyIconPath }) => (
+            {allMyFrontEndSkills.allMySkills.map(({ id, skillName, technologyIconPath: Icon }) => (
                 <div className="my-skills__card" key={id}>
                     <div className="my-skills__image-block">
-                        <img src={technologyIconPath} alt={skillName} />
+                        <Icon />
                     </div>
                     <p className="my-skills__name">{skillName}</p>
                 </div>
             ))}
-            </div>
+        </div>
     );
 };
+
 
 export default AboutMeCard;

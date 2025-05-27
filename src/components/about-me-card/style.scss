@@ -46,6 +46,10 @@
     width: 50%;
     height: 100px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     img {
         position: absolute;
