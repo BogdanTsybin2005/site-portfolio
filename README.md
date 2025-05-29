@@ -142,5 +142,22 @@ npm run dev
 
 If you have any questions or are interested in collaboration:
 
-- **Telegram**: [Telegram](https://t.me/bogdan_sest_1025)
-- **Email**: [Email](https://mail.google.com/mail/?view=cm&fs=1&to=tsybinb@gmail.com)
+- [Telegram](https://t.me/bogdan_sest_1025)
+- [Email](https://mail.google.com/mail/?view=cm&fs=1&to=tsybinb@gmail.com)
+
+---
+
+# My Site Portfolio
+
+This Docker image contains a static build of my personal site portfolio.  
+The project is built using Node.js and Vite, and served with Nginx via a multi-stage Docker build.
+
+---
+
+## How to Run the Container
+
+To run the image locally using Docker, use the following command:
+
+```bash
+docker run -d -p 8000:80 bogdan1025/my-site-portfolio:latest
+```

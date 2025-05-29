@@ -1,10 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 
 
-type LanguageState = 'EN' | 'RU';
+export type LanguageState = 'EN' | 'RU';
 
-const initialState: LanguageState = (localStorage.getItem('language') as LanguageState) || 'EN';
+const getInitialLanguage = (): LanguageState => {
+  if (typeof window === 'undefined') return 'EN';
+  const storedLang = localStorage.getItem('language');
+  return storedLang === 'RU' ? 'RU' : 'EN';
+};
+
+const initialState: LanguageState = getInitialLanguage();
 
 const languageSlice = createSlice({
   name: 'language',
@@ -15,10 +21,10 @@ const languageSlice = createSlice({
       localStorage.setItem('language', newLang);
       return newLang;
     },
-    setLanguage: (_, action) => {
+    setLanguage: (_, action: PayloadAction<LanguageState>) => {
       localStorage.setItem('language', action.payload);
       return action.payload;
-    }
+    },
   },
 });
 

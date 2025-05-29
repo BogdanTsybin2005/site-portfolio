@@ -11,7 +11,6 @@ function useLocalStorage<T>(key: string, initialValue: T): [T, Dispatch<SetState
             const item = window.localStorage.getItem(key);
             return item ? JSON.parse(item) as T : initialValue;
         } catch (error) {
-            console.warn(`Ошибка чтения localStorage по ключу "${key}":`, error);
             return initialValue;
         }
     };
@@ -20,7 +19,6 @@ function useLocalStorage<T>(key: string, initialValue: T): [T, Dispatch<SetState
 
     useEffect(() => {
         if (isServer) return;
-
         try {
             const valueToStore = JSON.stringify(storedValue);
             window.localStorage.setItem(key, valueToStore);

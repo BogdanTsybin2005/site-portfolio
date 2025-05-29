@@ -11,9 +11,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './style.scss';
 
+
+
 export default function ProjectSlider() {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const prevRef = useRef<null | HTMLDivElement>(null);
+  const nextRef = useRef<null | HTMLDivElement>(null);
   const currentLanguage = useAppSelector((state) => state.language);
   const lang = languageData[currentLanguage];
 
@@ -41,19 +43,21 @@ export default function ProjectSlider() {
         }}
         className="project-swiper"
       >
-        {slides.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className="slide-content">
-              <div className="slide-content__image">
-                <img src={item.imagePath} alt={item.projectName} />
-                <div className="slide-content__info">
-                  <a href={item.gitHubUrl} target="_blank" rel="noopener noreferrer">GitHub: {item.projectName}</a>
-                  <a href={item.urlWebSite} target="_blank" rel="noopener noreferrer">Site: {item.projectName}</a>
+        {slides.map((item) => {
+          return (
+            <SwiperSlide key={item.id}>
+              <div className="slide-content">
+                <div className="slide-content__image">
+                  <img src={item.imagePath} alt={item.projectName} />
+                  <div className="slide-content__info">
+                    <a href={item.gitHubUrl} target="_blank" rel="noopener noreferrer">GitHub: {item.projectName}</a>
+                    <a href={item.urlWebSite} target="_blank" rel="noopener noreferrer">Site: {item.projectName}</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          )
+        })}
 
         <div className="custom-swiper-button-prev" ref={prevRef}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
