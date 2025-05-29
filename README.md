@@ -1,36 +1,36 @@
-# 🧑‍💻 Bogdan Tsybin — Frontend-разработчик
+# 🧑‍💻 Bogdan Tsybin — Frontend Developer
 
-Данный проект представляет собой персональный сайт-портфолио, реализованный с использованием современного frontend-стека.  
-Проект разработан с акцентом на грамотную архитектуру, поддержку мультиязычности и адаптивную вёрстку.
+This repository contains a personal portfolio website developed using a modern frontend stack.  
+The project is built with a focus on scalable architecture, multilingual support, and responsive design.
 
-Он демонстрирует мои практические навыки в разработке клиентской части веб-приложений, включая организацию компонентов, управление состоянием и построение масштабируемой структуры проекта.
-
----
-
-## 🚀 Технологии, применённые в проекте
-
-- **React + TypeScript** — компонентный подход с типизацией
-- **Vite** — современный инструмент сборки с высокой скоростью
-- **SCSS** — модульные стили с использованием вложенностей
-- **Redux Toolkit** — централизованное управление состоянием (язык интерфейса, бургер-меню)
-- **Context API** — локализация и управление языком
-- **Custom hooks** — кастомные React-хуки (`useLocalStorage`, `useWindowWidth` и др.)
-- **Адаптивная вёрстка** — интерфейс, корректно отображающийся на всех типах устройств
-- **Мультиязычность** — поддержка русского и английского языков
+It demonstrates practical frontend development skills, including component organization, global state management, and reusable UI patterns.
 
 ---
 
-## 🎯 Цели проекта
+## 🚀 Technologies Used
 
-- Реализовать на практике архитектурные принципы в React-приложении
-- Организовать чистую и поддерживаемую структуру проекта
-- Применить глобальное состояние с использованием Redux Toolkit и Context API
-- Обеспечить мультиязычную поддержку без сторонних библиотек
-- Настроить модульность и повторное использование компонентов
+- **React + TypeScript** – component-based development with static typing
+- **Vite** – modern fast build tool
+- **SCSS** – modular and nested styling
+- **Redux Toolkit** – centralized state management (language settings, burger menu, etc.)
+- **Context API** – language localization and switching
+- **Custom Hooks** – reusable logic encapsulated in hooks (`useLocalStorage`, `useWindowWidth`, etc.)
+- **Responsive Design** – adaptive layout for all screen sizes
+- **Multilingual Support** – Russian and English interface versions
 
 ---
 
-## 📁 Структура проекта
+## 🎯 Project Objectives
+
+- Apply architectural principles in a real-world React project
+- Build a clean and maintainable folder structure
+- Manage global state using Redux Toolkit and Context API
+- Implement multilingual support without third-party libraries
+- Ensure modularity and reusability of components
+
+---
+
+## 📁 Project Structure
 
 ```bash
 📁 SITE-PORTFOLIO
@@ -121,25 +121,26 @@
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
+```
 
 ---
 
-## ⚙️ Установка и запуск
+## ⚙️ Installation and Launch
 
-# 1. Клонируйте репозиторий
+# 1. Clone the repository
 git clone https://github.com/BogdanTsybin2005/site-portfolio.git
 
-# 2. Установите зависимости
+# 2. Install dependencies
 npm install
 
-# 3. Запустите проект в режиме разработки
+# 3. Run the project in development mode
 npm run dev
 
 ---
 
-## 📫 Контакты
+## 📫 Contact
 
-Если у вас возникли вопросы по проекту или интерес к сотрудничеству:
+If you have any questions or are interested in collaboration:
 
-- **Telegram**: [Мой телеграм](https://t.me/bogdan_sest_1025)
-- **Email**: [Моя почта](https://mail.google.com/mail/?view=cm&fs=1&to=tsybinb@gmail.com)
+- **Telegram**: [Telegram](https://t.me/bogdan_sest_1025)
+- **Email**: [Email](https://mail.google.com/mail/?view=cm&fs=1&to=tsybinb@gmail.com)
