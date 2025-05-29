@@ -2,16 +2,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import { useRef } from 'react';
 import type { NavigationOptions } from 'swiper/types';
-import languageData from '../../interface-language-data/data';
 import { useAppSelector } from '../../hoocks/useAppSelector';
+import languageData from '../../interface-language-data/data';
+import slides from './slides-data';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './style.scss'
-
-
-
-const slides = [1, 2, 3, 4, 5];
+import './style.scss';
 
 export default function ProjectSlider() {
   const prevRef = useRef(null);
@@ -43,9 +41,17 @@ export default function ProjectSlider() {
         }}
         className="project-swiper"
       >
-        {slides.map((num) => (
-          <SwiperSlide key={num}>
-            <div className="slide-content">{num}</div>
+        {slides.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div className="slide-content">
+              <div className="slide-content__image">
+                <img src={item.imagePath} alt={item.projectName} />
+                <div className="slide-content__info">
+                  <a href={item.gitHubUrl} target="_blank" rel="noopener noreferrer">GitHub: {item.projectName}</a>
+                  <a href={item.urlWebSite} target="_blank" rel="noopener noreferrer">Site: {item.projectName}</a>
+                </div>
+              </div>
+            </div>
           </SwiperSlide>
         ))}
 
@@ -60,7 +66,6 @@ export default function ProjectSlider() {
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </div>
-
       </Swiper>
     </div>
   );
