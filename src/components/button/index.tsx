@@ -2,7 +2,8 @@ import type { FC, SVGProps } from 'react';
 import './style.scss';
 import { useAppSelector } from '../../hoocks/useAppSelector';
 import languageData from '../../interface-language-data/data';
-import CV_file from '../../../public/Tsybin_Bogdan_CV.pdf';
+import CV_file_RU from '../../../public/Tsybin_Bogdan_CV_(RU).pdf';
+import CV_file_EN from '../../../public/Tsybin_Bogdan_CV_(EN).pdf';
 
 
 
@@ -27,7 +28,7 @@ export const DownloadCVButton = () => {
     const buttonText = languageData[language].home.header.downloadCVButtonText;
 
     return (
-        <a href={CV_file} download className="download-cv__button">
+        <a href={language === 'EN' ? CV_file_EN : CV_file_RU} download className="download-cv__button">
             {buttonText}
         </a>
     );

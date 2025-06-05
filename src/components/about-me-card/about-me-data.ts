@@ -12,6 +12,8 @@ import Vite from '../../assets/icons/Vite';
 import Rest_api from '../../assets/icons/Rest_api';
 import ReduxToolkit from '../../assets/icons/Redux-toolkit';
 import Zustand from '../../assets/icons/zustand';
+import NextJS from '../../assets/icons/nextJS';
+import TanstackQuery from '../../assets/icons/TanstackQuery';
 
 
 
@@ -126,5 +128,15 @@ export const allMyFrontEndSkills: MyFrontendSkills = {
             skillName: 'Zustand',
             technologyIconPath: Zustand
         },
+        {
+            id: 15,
+            skillName: 'Next JS',
+            technologyIconPath: NextJS
+        },
+        {
+            id: 16,
+            skillName: 'Tanstack Query',
+            technologyIconPath: TanstackQuery
+        }
     ]
 };
