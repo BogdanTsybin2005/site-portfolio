@@ -41,7 +41,7 @@ const allMySVGIcons: AllSVGIconsType = {
         {
             id: 4,
             icon: GitHub,
-            url: 'https://github.com/BogdanSEST2',
+            url: 'https://github.com/BogdanTsybin2005',
             isIconRelatedToEmail: false
         }
     ]
