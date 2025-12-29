@@ -2,7 +2,7 @@ import sitePortfolio from '../../assets/images/site-portfolio.png';
 import YourMeal from '../../assets/images/YourMeal.png';
 import internetStore from '../../assets/images/internet-store.png';
 import _4Pets from '../../assets/images/4Pets.png';
-import newsWebsite from '../../assets/images/news-website.png';
+import newsWebsite from '../../assets/images/news-web-site.png';
 
 
 
